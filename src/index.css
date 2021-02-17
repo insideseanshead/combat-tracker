@@ -9,8 +9,9 @@ body {
 
 .background{
   background-image: url(https://i.pinimg.com/originals/a8/83/e2/a883e27128e3bb4e7850780e105cb765.jpg);
-  background-position: 50% 70%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
@@ -26,9 +27,21 @@ code {
   border-bottom: 4px darkred solid;
 }
 
-
-
 .container {
-  background-color: black;
+  
   height: 100vh;
+}
+
+.form-bg{
+  background-color: darkslategray;
+}
+
+.body-bg{
+  background-color: black;
+  min-height: 85%;
+}
+
+footer{
+  background: darkred;
+  color: gray;
 }

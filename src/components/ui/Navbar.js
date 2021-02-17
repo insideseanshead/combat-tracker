@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from "react-boots
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Navbar.Brand href="#home">Warhammer 2E Combat Tracker</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
