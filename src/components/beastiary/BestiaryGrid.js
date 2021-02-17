@@ -4,7 +4,7 @@ import { Card, Accordion } from "react-bootstrap";
 const BestiaryGrid = () => {
   return (
     <div className="p-3">
-      <h3 className="text-muted ">BEASTIARY</h3>
+      <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3>
       <Accordion defaultActiveKey="0">
         <Card className="bg-secondary">
           <Accordion.Toggle as={Card.Header} eventKey="0">
