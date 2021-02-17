@@ -6,12 +6,12 @@ const BestiaryGrid = () => {
     <div className="p-3">
       <h3 className="text-muted ">BEASTIARY</h3>
       <Accordion defaultActiveKey="0">
-        <Card>
+        <Card className="bg-secondary">
           <Accordion.Toggle as={Card.Header} eventKey="0">
             <div className="beastName">Beastmen</div>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
-            <Card.Body>
+            <Card.Body className="beastiaryCard">
               <div className="row">
                 <div className="col-6">
                   <div className="description text-left">
@@ -74,6 +74,7 @@ const BestiaryGrid = () => {
                       </tr>
                     </table>
                   </div>
+                  <br />
                   <p className="text-left">
                     <strong>Skills:</strong> Concealment, Follow Trail,
                     Intimidate, Outdoor Survival, Perception, Shadowing, Silent
