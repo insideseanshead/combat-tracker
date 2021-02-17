@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jumbo {
+  background-image: url(https://external-preview.redd.it/IYHEyys4VDafVkeykj1Gv1LczUlam4pNjMGnTAQGTgw.jpg?auto=webp&s=2aee955522d27b985acae3fd99bf57e9e47c34b6);
+  background-position: 50% 75%;
+  height: 400px;
+}
