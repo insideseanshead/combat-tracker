@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header>
       <Navbar />
-      <Jumbotron className="jumbo">
-        <div className="header_text">
+      <Jumbotron className="jumbo mb-0">
+        {/* <div className="header_text">
           <h1>Hello, world!</h1>
           <p>
             This is a simple hero unit, a simple jumbotron-style component for
@@ -16,7 +16,7 @@ const Header = () => {
           <p>
             <Button variant="primary">Learn more</Button>
           </p>
-        </div>
+        </div> */}
       </Jumbotron>
     </header>
   );
