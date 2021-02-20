@@ -4,85 +4,85 @@ const Schema = mongoose.Schema;
 
 const animalSchema = new Schema({
     name: {
-        type: Text,
+        type: String,
         isRequired: true
     },
     description: {
-        type: Text,
+        type: String,
         isMultiline: true,
         isRequired: true
     },
     weaponSkill: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     balisticSkill: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     strength: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     toughness: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     agility: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     intelligence: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     willPower: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     fellowship: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     actions: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     wounds: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     strengthBonus: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     toughnessBonus: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     movement: {
-        type: Text,
+        type: String,
         isRequired: true
     },
     magic: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     insanityPoints: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     fatePoints: {
-        type: Integer,
+        type: Number,
         isRequired: true
     },
     skills: {
-        type: Text,
+        type: String,
         isMultiline: true,
         isRequired: true
     },
     talents: {
-        type: Text,
+        type: String,
         isMultiline: true,
         isRequired: true
     }
