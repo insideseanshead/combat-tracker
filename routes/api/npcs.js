@@ -1,16 +1,16 @@
 const router = require('express').Router();
-let Monster = require('../models/monster.model');
+let Npc = require('../../models/npc.model');
 
-// Get all monsters
+// Get all Npcs
 router.route('/').get((req,res) => {
-    Monster.find()
-        .then((monsters) => res.json(monsters))
+    Npc.find()
+        .then((npcs) => res.json(npcs))
         .catch((err) => res.status(400).json('Error: ' + err));
 })
 
-//Get monster by id
+//Get npc by id
 router.route('/:id').get((req, res) => {
-    Monster.findById(req.params.id)
-        .then((monster) => res.json(monster))
+    Npc.findById(req.params.id)
+        .then((npc) => res.json(npc))
         .catch((err) => res.status(400).json("Error: " + err))
 })

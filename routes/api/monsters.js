@@ -1,16 +1,16 @@
 const router = require('express').Router();
-let Animal = require('../models/animal.model');
+let Monster = require('../../models/monster.model');
 
 // Get all monsters
 router.route('/').get((req,res) => {
-    Animal.find()
-        .then((animals) => res.json(animals))
+    Monster.find()
+        .then((monsters) => res.json(monsters))
         .catch((err) => res.status(400).json('Error: ' + err));
 })
 
 //Get monster by id
 router.route('/:id').get((req, res) => {
-    Animal.findById(req.params.id)
-        .then((animal) => res.json(animal))
+    Monster.findById(req.params.id)
+        .then((monster) => res.json(monster))
         .catch((err) => res.status(400).json("Error: " + err))
 })
