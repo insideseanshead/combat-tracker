@@ -15,13 +15,13 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
         console.log("MongoDB database connection established successfully")
     })
 
-    const monsterRouter = require('./routes/monsters')
-    const animalRouter = require('./routes/animals')
-    const npcRouter = require('./routes/npcs')
+    const monsterRouter = require('./routes/monster')
+    const animalRouter = require('./routes/animal')
+    const npcRouter = require('./routes/npc')
 
-    app.use('/monsters', monsterRouter);
-    app.use('/animals', animalRouter);
-    app.use('/npcs', npcRouter);
+    app.use('/monster', monsterRouter);
+    app.use('/animal', animalRouter);
+    app.use('/npc', npcRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);

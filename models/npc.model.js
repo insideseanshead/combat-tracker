@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 
-const monsterSchema = new Schema({
+const npcSchema = new Schema({
     name: {
         type: Text,
         isRequired: true
@@ -10,6 +10,14 @@ const monsterSchema = new Schema({
     description: {
         type: Text,
         isMultiline: true,
+        isRequired: true
+    },
+    career: {
+        type: Text,
+        isRequired: true
+    },
+    race: {
+        type: Text,
         isRequired: true
     },
     weaponSkill: {
@@ -86,11 +94,6 @@ const monsterSchema = new Schema({
         isMultiline: true,
         isRequired: true
     },
-    specialRules: {
-        type: Text,
-        isMultiline: true,
-        isRequired: true
-    },
     armour: {
         type: Text,
         isRequired: true
@@ -103,8 +106,12 @@ const monsterSchema = new Schema({
         type: Text,
         isRequired: true
     },
+    tappings: {
+        type: Text,
+        isRequired: true
+    }
 })
 
-const Monster = mongoose.model('Monster', monsterSchema)
+const Npc = mongoose.model('Npc', npcSchema)
 
-module.exports = Monster
+module.exports = Npc

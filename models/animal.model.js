@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 
-const monsterSchema = new Schema({
+const animalSchema = new Schema({
     name: {
         type: Text,
         isRequired: true
@@ -85,26 +85,9 @@ const monsterSchema = new Schema({
         type: Text,
         isMultiline: true,
         isRequired: true
-    },
-    specialRules: {
-        type: Text,
-        isMultiline: true,
-        isRequired: true
-    },
-    armour: {
-        type: Text,
-        isRequired: true
-    },
-    armourPoints: {
-        type: Text,
-        isRequired: true
-    },
-    weapons: {
-        type: Text,
-        isRequired: true
-    },
+    }
 })
 
-const Monster = mongoose.model('Monster', monsterSchema)
+const Animal = mongoose.model('Animal', animalSchema)
 
-module.exports = Monster
+module.exports = Animal
