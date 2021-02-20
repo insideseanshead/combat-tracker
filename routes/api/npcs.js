@@ -14,3 +14,5 @@ router.route('/:id').get((req, res) => {
         .then((npc) => res.json(npc))
         .catch((err) => res.status(400).json("Error: " + err))
 })
+
+module.exports = router;

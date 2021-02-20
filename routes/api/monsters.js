@@ -14,3 +14,5 @@ router.route('/:id').get((req, res) => {
         .then((monster) => res.json(monster))
         .catch((err) => res.status(400).json("Error: " + err))
 })
+
+module.exports = router;
