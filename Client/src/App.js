@@ -6,8 +6,6 @@ import SearchBar from './components/ui/SearchBar';
 import Footer from './components/ui/Footer';
 import BestiaryGrid from './components/beastiary/BestiaryGrid';
 
-require('dotenv').config
-
 function App() {
   return (
     <div className="App">

@@ -9,6 +9,18 @@ const BestiaryGrid = () => {
   // State for Beastiary Cards
   const [cards, setCards] = useState([]);
 
+  // Set Initial State
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(
+        `${API}/monsters/`
+      );
+
+      console.log(result.data)
+    }
+  })
+
+
   return (
     <div className="p-3">
       <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3>
