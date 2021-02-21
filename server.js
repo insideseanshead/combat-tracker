@@ -19,10 +19,6 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
         console.log("MongoDB database connection established successfully")
     })
 
-    // const monsterRouter = require('./routes/monsters')
-    // const animalRouter = require('./routes/animals')
-    // const npcRouter = require('./routes/npcs')
-
     app.use(routes);
 
 app.listen(port, () => {
