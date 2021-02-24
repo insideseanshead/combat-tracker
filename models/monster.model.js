@@ -57,7 +57,7 @@ const monsterSchema = new Schema({
         isRequired: true
     },
     toughnessBonus: {
-        type: Number,
+        type: String,
         isRequired: true
     },
     movement: {

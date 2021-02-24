@@ -58,6 +58,14 @@ footer{
 
 /* Beastiary Style
 ============================================================================ */
+.card-header {
+  cursor: pointer;
+}
+
+.accordion{
+  margin-bottom: 10px;
+}
+
 .beastName{
   font-family: 'Texturina', serif;
   font-weight: 600;
