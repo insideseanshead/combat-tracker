@@ -15,8 +15,11 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install --prefix client",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",

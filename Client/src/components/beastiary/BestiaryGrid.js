@@ -2,24 +2,27 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Card, Accordion } from "react-bootstrap";
 
-
-const API = process.env.MONGO_URI
+import API from '../utils/API';
+// const API = process.env.MONGO_URI
 
 const BestiaryGrid = () => {
   // State for Beastiary Cards
-  const [cards, setCards] = useState([]);
+  const [monsters, setMonsters] = useState([]);
 
   // Set Initial State
   useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `${API}/monsters/`
-      );
+    loadMonsters()
+  }, [])
 
-      console.log(result.data)
-    }
-  })
+  function loadMonsters() {
+    API.getMonsters()
+      .then(res => 
+          setMonsters(res.data)
+        )
+        .catch(err => console.log(err))
+  }
 
+  console.log(monsters)
 
   return (
     <div className="p-3">

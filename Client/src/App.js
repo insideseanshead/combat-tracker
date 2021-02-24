@@ -12,6 +12,7 @@ function App() {
       <Header />
       <div class="background">
       <Container className="container">
+        <br />
         <SearchBar />
         <div className="body-bg">
           <BestiaryGrid />
