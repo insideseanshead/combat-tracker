@@ -1,23 +1,12 @@
+import React from 'react'
 import { Card, Accordion } from "react-bootstrap";
-import MonsterCard from './MonsterCards'
 
-// const API = process.env.MONGO_URI
-
-const BestiaryGrid = ({monsters}) => {
-  return (
-    <div className="p-3">
-      <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3>
-      <section>
-        {monsters.map(monster => (
-          <MonsterCard key={monster._id} monster={monster}></MonsterCard>
-        ))}
-      </section>
-
-
-      {/* <Accordion defaultActiveKey="0">
+const MonsterCards = ({monster}) => {
+    return (
+        <Accordion defaultActiveKey="0">
         <Card className="bg-secondary">
           <Accordion.Toggle as={Card.Header} eventKey="0">
-            <div className="beastName">Beastmen</div>
+            <div className="beastName">{monster.name}</div>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body className="beastiaryCard">
@@ -118,9 +107,8 @@ const BestiaryGrid = ({monsters}) => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-      </Accordion> */}
-    </div>
-  );
-};
+      </Accordion>
+    )
+}
 
-export default BestiaryGrid;
+export default MonsterCards
