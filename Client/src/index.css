@@ -32,10 +32,9 @@ code {
   border-bottom: 4px darkred solid;
 }
 
-.container {
-  
-  height: 100vh;
-}
+/* .container {
+  padding-bottom: 20px;
+} */
 
 .form-bg{
   background-color: darkslategray;

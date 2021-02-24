@@ -39,6 +39,7 @@ function App() {
           <BestiaryGrid monsters={monsters} />
         </div>
       </Container>
+      <br />
       <Footer />
       </div>
     </div>

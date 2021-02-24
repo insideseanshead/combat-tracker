@@ -3,7 +3,7 @@ import { Card, Accordion } from "react-bootstrap";
 
 const MonsterCards = ({monster}) => {
     return (
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="1">
         <Card className="bg-secondary">
           <Accordion.Toggle as={Card.Header} eventKey="0">
             <div className="beastName">{monster.name}</div>
