@@ -13,14 +13,7 @@ const MonsterCards = ({monster}) => {
               <div className="row">
                 <div className="col-6">
                   <div className="description text-left">
-                    Beastmen are twisted creatures of Chaos, hideously melding
-                    the features of humans and animals. They have haunted the
-                    forests of the Empire for countless generations, preying on
-                    humanity as hunters prey on animals. They travel in small
-                    bands known as war herds, which sometimes unite under a
-                    strong leader to bring death and terror to the people of the
-                    Empire. Beastmen are true servants of Chaos and they hate
-                    Mankind above all.
+                    {monster.description}
                   </div>
                 </div>
                 <div className="col-6">
@@ -38,14 +31,14 @@ const MonsterCards = ({monster}) => {
                         <th>Fel</th>
                       </tr>
                       <tr>
-                        <td>40%</td>
-                        <td>25%</td>
-                        <td>35%</td>
-                        <td>45%</td>
-                        <td>35%</td>
-                        <td>25%</td>
-                        <td>25%</td>
-                        <td>25%</td>
+                        <td>{monster.weaponSkill}%</td>
+                        <td>{monster.balisticSkill}%</td>
+                        <td>{monster.strength}%</td>
+                        <td>{monster.toughness}%</td>
+                        <td>{monster.agility}%</td>
+                        <td>{monster.intelligence}%</td>
+                        <td>{monster.willPower}%</td>
+                        <td>{monster.fellowship}%</td>
                       </tr>
                     </table>
                     Secondary
@@ -61,47 +54,30 @@ const MonsterCards = ({monster}) => {
                         <th>FP</th>
                       </tr>
                       <tr>
-                        <td>1</td>
-                        <td>12</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>{monster.actions}</td>
+                        <td>{monster.wounds}</td>
+                        <td>{monster.strengthBonus}</td>
+                        <td>{monster.toughnessBonus}</td>
+                        <td>{monster.movement}</td>
+                        <td>{monster.magic}</td>
+                        <td>{monster.insanityPoints}</td>
+                        <td>{monster.fatePoints}</td>
                       </tr>
                     </table>
                   </div>
                   <br />
                   <p className="text-left">
-                    <strong>Skills:</strong> Concealment, Follow Trail,
-                    Intimidate, Outdoor Survival, Perception, Shadowing, Silent
-                    Move, Speak Language (Dark Tongue)
-                  </p>
+                    <strong>Skills:</strong> {monster.skills}</p>
                   <p className="text-left">
-                    <strong>Skills:</strong> Keen Senses, Menacing, Rover
-                  </p>
+                    <strong>Talents:</strong> {monster.talents}</p>
                   <p className="text-left">
-                    <strong>Special Rules</strong> Chaos Mutations: Animalistic
-                    Legs and Horns. There is a 25% chance of an additional
-                    mutation. Roll on Table 11- 1: Chaos Mutations to generate
-                    the extra mutation if present and modify stats as
-                    appropriate. Silent as the Beasts of the Woods: Beastmen are
-                    naturally stealthy, and most are also very experienced
-                    hunters and trackers. They gain +20% to Silent Move Tests
-                    and +10% to Concealment Tests.
-                  </p>
+                    <strong>Special Rules</strong> {monster.specialRules}</p>
                   <p className="text-left">
-                    <strong>Armour</strong> Light Armour (Leather Jack)
-                  </p>
+                    <strong>Armour</strong> {monster.armour}</p>
                   <p className="text-left">
-                    <strong>Armour Points:</strong> Head 0, Arms 1, Body 1, Legs
-                    0
-                  </p>
+                    <strong>Armour Points:</strong> {monster.armourPoints}</p>
                   <p className="text-left">
-                    <strong>Weapons:</strong> Hand Weapon or Spear, Horns (SB–1
-                    damage), and Shield
-                  </p>
+                    <strong>Weapons:</strong> {monster.weapons}</p>
                 </div>
               </div>
             </Card.Body>
