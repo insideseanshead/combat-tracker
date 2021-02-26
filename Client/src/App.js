@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     loadMonsters()
   }, [])
-
   function loadMonsters() {
     API.getMonsters()
       .then(res => 
