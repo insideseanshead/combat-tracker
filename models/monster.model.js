@@ -5,103 +5,82 @@ const Schema = mongoose.Schema;
 const monsterSchema = new Schema({
     name: {
         type: String,
-        isRequired: true
     },
     description: {
         type: String,
-        isMultiline: true,
-        isRequired: true
+        isMultiline: true
     },
     weaponSkill: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     balisticSkill: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     strength: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     toughness: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     agility: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     intelligence: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     willPower: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     fellowship: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     actions: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     wounds: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     strengthBonus: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     toughnessBonus: {
-        type: String,
-        isRequired: true
+        type: String
     },
     movement: {
-        type: String,
-        isRequired: true
+        type: String
     },
     magic: {
-        type: Number,
-        isRequired: true
+        type: String
     },
     insanityPoints: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     fatePoints: {
-        type: Number,
-        isRequired: true
+        type: Number
     },
     skills: {
         type: String,
-        isMultiline: true,
-        isRequired: true
+        isMultiline: true
     },
     talents: {
         type: String,
-        isMultiline: true,
-        isRequired: true
+        isMultiline: true
     },
     specialRules: {
         type: String,
-        isMultiline: true,
-        isRequired: true
+        isMultiline: true
+    },
+    insanities: {
+        type: String
     },
     armour: {
-        type: String,
-        isRequired: true
+        type: String
     },
     armourPoints: {
-        type: String,
-        isRequired: true
+        type: String
     },
     weapons: {
-        type: String,
-        isRequired: true
+        type: String
     },
 })
 
