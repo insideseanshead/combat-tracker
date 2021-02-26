@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API from './components/utils/API';
 import axios from 'axios';
 import './App.css';
 import Header from './components/ui/Header'
@@ -6,9 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from 'react-bootstrap';
 import SearchBar from './components/ui/SearchBar';
 import Footer from './components/ui/Footer';
-import BestiaryGrid from './components/beastiary/BestiaryGrid';
+import BestiaryGrid from './components/beastiary/BestiaryGrid';;
 
-import API from './components/utils/API';
 
 function App() {
   // State for Beastiary Cards
@@ -26,7 +26,8 @@ function App() {
         .catch(err => console.log(err))
   }
 
-  console.log(monsters)
+  // console.log(monsters)
+  
   return (
     <div className="App">
       <Header />
