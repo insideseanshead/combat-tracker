@@ -17,16 +17,9 @@ function App() {
   // Set Initial State
   useEffect(() => {
     const fetchItems = async () => {
-      const res = await axios.get(`/api/monsters?name=${query}`)
+      const res = await axios(`/api/monsters?name=${query}`)
       setMonsters(res.data)
     };
-
-    
-    // axios.get(`/api/monsters?name=${query}`)
-    // .then(res => 
-    //     setMonsters(res.data)
-    //   )
-    //   .catch(err => console.log(err))
     fetchItems()
   }, [query])
   
