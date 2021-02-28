@@ -3,7 +3,7 @@ import axios from 'axios';
 export default{
     // GET Monsters
     getMonsters: function() {
-        return axios.get('/api/monsters')
+        return axios.get(`/api/monsters`)
     },
 
     // GET Animals

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import API from './components/utils/API';
 import axios from 'axios';
 import './App.css';
 import Header from './components/ui/Header'
@@ -13,19 +12,24 @@ import BestiaryGrid from './components/beastiary/BestiaryGrid';;
 function App() {
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
+  const [query, setQuery] = useState('')
 
   // Set Initial State
   useEffect(() => {
-    loadMonsters()
-  }, [])
-  function loadMonsters() {
-    API.getMonsters()
-      .then(res => 
-          setMonsters(res.data)
-        )
-        .catch(err => console.log(err))
-  }
+    const fetchItems = async () => {
+      const res = await axios.get(`/api/monsters?name=${query}`)
+      setMonsters(res.data)
+    };
 
+    
+    // axios.get(`/api/monsters?name=${query}`)
+    // .then(res => 
+    //     setMonsters(res.data)
+    //   )
+    //   .catch(err => console.log(err))
+    fetchItems()
+  }, [query])
+  
   // console.log(monsters)
   
   return (
@@ -34,7 +38,7 @@ function App() {
       <div class="background">
       <Container className="container">
         <br />
-        <SearchBar />
+        <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">
           <BestiaryGrid monsters={monsters} />
         </div>
