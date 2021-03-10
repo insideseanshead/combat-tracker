@@ -17,6 +17,7 @@ const SearchBar = ({ getQuery }) => {
           <Form.Group className="m-0" controlId="formBasicEmail">
             <Form.Control
               type="text"
+              className='form-control'
               placeholder="Search Beastiary"
               value={text}
               onChange={(e) => onChange(e.target.value)}
