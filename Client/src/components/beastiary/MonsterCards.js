@@ -71,9 +71,9 @@ const MonsterCards = ({monster}) => {
                   <p className="text-left">
                     <strong>Talents:</strong> {monster.talents}</p>
                   <p className="text-left">
-                    <strong>Special Rules</strong> {monster.specialRules}</p>
+                    <strong>Special Rules:</strong> {monster.specialRules}</p>
                   <p className="text-left">
-                    <strong>Armour</strong> {monster.armour}</p>
+                    <strong>Armour:</strong> {monster.armour}</p>
                   <p className="text-left">
                     <strong>Armour Points:</strong> {monster.armourPoints}</p>
                   <p className="text-left">

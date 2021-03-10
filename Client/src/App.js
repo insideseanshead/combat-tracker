@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(`/api/monsters`)
+      // const res = await axios(`/api/monsters`)
       setMonsters(res.data)
     };
     fetchItems()
