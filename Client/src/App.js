@@ -13,11 +13,12 @@ function App() {
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
   const [query, setQuery] = useState('')
+  
 
   // Set Initial State
   useEffect(() => {
     const fetchItems = async () => {
-      const res = await axios(`/api/monsters?name=${query}`)
+      const res = await axios(`/api/monsters`)
       setMonsters(res.data)
     };
     fetchItems()
@@ -33,7 +34,7 @@ function App() {
         <br />
         <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">
-          <BestiaryGrid monsters={monsters} />
+          <BestiaryGrid monsters={monsters} query={query}/>
         </div>
       </Container>
       <br />
