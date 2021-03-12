@@ -1,25 +1,26 @@
-import React from 'react'
+import React from "react";
 import { Card, Accordion } from "react-bootstrap";
 
-const MonsterCards = ({monster}) => {
-    return (
-        <Accordion defaultActiveKey="1">
-        <Card className="bg-secondary">
-          <Accordion.Toggle as={Card.Header} eventKey="0">
-            <div className="beastName">{monster.name}</div>
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body className="beastiaryCard">
-              <div className="row">
-                <div className="col-6">
-                  <div className="description text-left">
-                    {monster.description}
-                  </div>
+const MonsterCards = ({ monster }) => {
+  return (
+    <Accordion defaultActiveKey="1">
+      <Card className="bg-secondary">
+        <Accordion.Toggle as={Card.Header} eventKey="0">
+          <div className="beastName">{monster.name}</div>
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body className="beastiaryCard">
+            <div className="row">
+              <div className="col-6">
+                <div className="description text-left">
+                  {monster.description}
                 </div>
-                <div className="col-6">
-                  <div className="profile">
-                    Main
-                    <table>
+              </div>
+              <div className="col-6">
+                <div className="profile">
+                  Main
+                  <table>
+                    <thead>
                       <tr>
                         <th>WS</th>
                         <th>BS</th>
@@ -30,6 +31,8 @@ const MonsterCards = ({monster}) => {
                         <th>WP</th>
                         <th>Fel</th>
                       </tr>
+                    </thead>
+                    <tbody>
                       <tr>
                         <td>{monster.weaponSkill}%</td>
                         <td>{monster.balisticSkill}%</td>
@@ -40,9 +43,11 @@ const MonsterCards = ({monster}) => {
                         <td>{monster.willPower}%</td>
                         <td>{monster.fellowship}%</td>
                       </tr>
-                    </table>
-                    Secondary
-                    <table>
+                    </tbody>
+                  </table>
+                  Secondary
+                  <table>
+                    <thead>
                       <tr>
                         <th>A</th>
                         <th>W</th>
@@ -53,6 +58,8 @@ const MonsterCards = ({monster}) => {
                         <th>IP</th>
                         <th>FP</th>
                       </tr>
+                    </thead>
+                    <tbody>
                       <tr>
                         <td>{monster.actions}</td>
                         <td>{monster.wounds}</td>
@@ -63,28 +70,35 @@ const MonsterCards = ({monster}) => {
                         <td>{monster.insanityPoints}</td>
                         <td>{monster.fatePoints}</td>
                       </tr>
-                    </table>
-                  </div>
-                  <br />
-                  <p className="text-left">
-                    <strong>Skills:</strong> {monster.skills}</p>
-                  <p className="text-left">
-                    <strong>Talents:</strong> {monster.talents}</p>
-                  <p className="text-left">
-                    <strong>Special Rules:</strong> {monster.specialRules}</p>
-                  <p className="text-left">
-                    <strong>Armour:</strong> {monster.armour}</p>
-                  <p className="text-left">
-                    <strong>Armour Points:</strong> {monster.armourPoints}</p>
-                  <p className="text-left">
-                    <strong>Weapons:</strong> {monster.weapons}</p>
+                    </tbody>
+                  </table>
                 </div>
+                <br />
+                <p className="text-left">
+                  <strong>Skills:</strong> {monster.skills}
+                </p>
+                <p className="text-left">
+                  <strong>Talents:</strong> {monster.talents}
+                </p>
+                <p className="text-left">
+                  <strong>Special Rules:</strong> {monster.specialRules}
+                </p>
+                <p className="text-left">
+                  <strong>Armour:</strong> {monster.armour}
+                </p>
+                <p className="text-left">
+                  <strong>Armour Points:</strong> {monster.armourPoints}
+                </p>
+                <p className="text-left">
+                  <strong>Weapons:</strong> {monster.weapons}
+                </p>
               </div>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
-    )
-}
+            </div>
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
+  );
+};
 
-export default MonsterCards
+export default MonsterCards;
