@@ -6,7 +6,7 @@ import MonsterCard from "./MonsterCards";
 const BestiaryGrid = ({ monsters, query }) => { 
   return (
     <div className="p-3">
-      <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3>
+      {/* <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3> */}
       <section>
         
         {monsters.filter((a) => (a.name.toLowerCase().indexOf(query.toLowerCase()) >=0))
