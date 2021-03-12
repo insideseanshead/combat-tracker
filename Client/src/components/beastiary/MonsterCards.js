@@ -92,6 +92,9 @@ const MonsterCards = ({ monster }) => {
                 <p className="text-left">
                   <strong>Weapons:</strong> {monster.weapons}
                 </p>
+                <p className="text-left">
+                  <strong>Slaughter Margin:</strong> {monster.slaughterMargin}
+                </p>
               </div>
             </div>
           </Card.Body>
