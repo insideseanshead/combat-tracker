@@ -23,7 +23,7 @@ function App() {
       setMonsters(res.data)
     };
     fetchItems()
-  }, [query])
+  }, [])
   
   // console.log(monsters)
   

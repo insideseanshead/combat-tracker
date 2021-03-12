@@ -42,7 +42,8 @@ code {
 
 .body-bg{
   background-color: black;
-  min-height: 85%;
+  height: 100vh;
+  overflow: auto;
 }
 
 footer{
