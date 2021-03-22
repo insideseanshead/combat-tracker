@@ -32,6 +32,10 @@ code {
   border-bottom: 4px darkred solid;
 }
 
+.container {
+  min-height: 50vh;
+}
+
 /* .container {
   padding-bottom: 20px;
 } */
