@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import API from '../utils/API'
 
 const Landing = () => {
   // State for Login
@@ -15,6 +16,13 @@ const Landing = () => {
       [name]: value,
     });
   };
+
+  const formSubmit = event =>{
+      event.preventDefault();
+        API.login(loginFormState).then(loginData=>{
+            console.log(loginData)
+        })
+    }
 
   return (
     <div className="login">
@@ -37,7 +45,7 @@ const Landing = () => {
                 placeholder="password"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" value="login">
               Submit
             </Button>
           </Form>
