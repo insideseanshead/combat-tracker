@@ -1,37 +1,48 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 
 const Landing = () => {
-    // State for Login
+  // State for Login
   const [loginFormState, setloginFormState] = useState({
-    email:'',
-    password:''
-  })
+    email: "",
+    password: "",
+  });
 
-  const inputChange = event =>{
-    const {name,value}=event.target;
+  const inputChange = (event) => {
+    const { name, value } = event.target;
     setloginFormState({
       ...loginFormState,
-      [name]:value
-    })
-  }
-  
+      [name]: value,
+    });
+  };
+
   return (
     <div className="login">
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control onChange = {inputChange} type="text" name='email' placeholder="Enter email" />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control onChange = {inputChange} type="password" name="Password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <Row>
+        <Col md={{ span: 4, offset: 4}}>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control
+                onChange={inputChange}
+                type="text"
+                name="email"
+                placeholder="Enter email"
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Control
+                onChange={inputChange}
+                type="password"
+                name="Password"
+                placeholder="password"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
 };
