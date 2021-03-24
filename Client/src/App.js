@@ -34,7 +34,14 @@ function App() {
           campaigns:profileData.Campaigns,
           isLoggedIn:true
         })
-        console.log(profileState)
+      } else {
+        localStorage.removeItem('token');
+        setProfileState({
+          name: "",
+          email: "",
+          tanks: [],
+          isLoggedIn: false,
+        })
       }
     })
   },[])
