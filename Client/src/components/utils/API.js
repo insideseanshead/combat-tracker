@@ -30,6 +30,14 @@ const API = {
         .then(res=> res.json())
         .catch((err) => console.log(err));
     },
+
+    getProfile: function(token){
+      return fetch("http://localhost:5000/api/users/secretProfile", {
+        headers:{
+          "authorization": `Bearer ${token}`
+        }
+      }).then(res=>res.json()).catch(err=>null)
+    }
   };
   
   module.exports = API;
