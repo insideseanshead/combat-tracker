@@ -20,7 +20,7 @@ function App() {
   const [profileState,setProfileState]=useState({
     name:'',
     email:'',
-    campaign:[],
+    campaigns:[],
     isLoggedIn:false
   })
 
@@ -31,9 +31,10 @@ function App() {
         setProfileState({
           name:profileData.name,
           email:profileData.email,
-          campaign:profileData.Campaign,
+          campaigns:profileData.Campaigns,
           isLoggedIn:true
         })
+        console.log(profileState)
       }
     })
   },[])
@@ -54,9 +55,10 @@ function App() {
         setProfileState({
           name:profileData.name,
           email:profileData.email,
-          campaign:profileData.Campaign,
+          campaigns:profileData.Campaigns,
           isLoggedIn:true
         })
+        console.log(profileData)
       })
     })
   } 
@@ -106,6 +108,7 @@ function App() {
               Submit
             </Button>
           </Form>
+          {profileState.isLoggedIn?profileState.campaigns.map(campaignObj=><p>{campaignObj.name}</p>):<h1>log in to see your campaigns</h1>}
         </Col>
       </Row>
 
