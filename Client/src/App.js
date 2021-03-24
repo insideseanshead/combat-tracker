@@ -17,6 +17,27 @@ function App() {
     password: "",
   });
 
+  const [profileState,setProfileState]=useState({
+    name:'',
+    email:'',
+    campaign:[],
+    isLoggedIn:false
+  })
+
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    API.getProfile(token).then(profileData=>{
+      if(profileData){
+        setProfileState({
+          name:profileData.name,
+          email:profileData.email,
+          campaign:profileData.Campaign,
+          isLoggedIn:true
+        })
+      }
+    })
+  },[])
+
   const inputChange = (event) => {
     const { name, value } = event.target;
     setloginFormState({
@@ -27,8 +48,16 @@ function App() {
 
   const formSubmit = event=>{
     event.preventDefault();
-    API.login(loginFormState).then(loginData=>{
-      console.log(loginData)
+    API.login(loginFormState).then(newToken=>{
+      localStorage.setItem('token',newToken.token)
+      API.getProfile(newToken.token).then(profileData=>{
+        setProfileState({
+          name:profileData.name,
+          email:profileData.email,
+          campaign:profileData.Campaign,
+          isLoggedIn:true
+        })
+      })
     })
   } 
   // State for Beastiary Cards
