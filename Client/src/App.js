@@ -75,8 +75,9 @@ function App() {
   
   useEffect(() => {
     const fetchItems = async () => {
-      const res = await axios(`/api/monsters`)
+      const res = await axios(`https://combattracker-api.herokuapp.com/api/monsters`)
       setMonsters(res.data)
+      console.log(res)
     };
     fetchItems()
   }, [])
@@ -90,7 +91,7 @@ function App() {
       <Container className="container">
         <br />
         
-        <Row>
+        {/* <Row>
         <Col md={{ span: 4, offset: 4 }}>
           <Form onSubmit={formSubmit}>
             <Form.Group controlId="formBasicEmail">
@@ -117,13 +118,13 @@ function App() {
           </Form>
           {profileState.isLoggedIn?profileState.campaigns.map(campaignObj=><p>{campaignObj.name}</p>):<h1>log in to see your campaigns</h1>}
         </Col>
-      </Row>
+      </Row> */}
 
 
-        {/* <SearchBar getQuery={(q) => setQuery(q)} />
+        <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">
           <BestiaryGrid monsters={monsters} query={query}/>
-        </div> */}
+        </div>
       </Container>
       <br />
       <Footer />

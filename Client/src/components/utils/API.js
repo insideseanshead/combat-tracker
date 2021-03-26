@@ -20,7 +20,7 @@
 const API = {
     login: function (userData) {
       console.log(userData);
-      return fetch("http://localhost:5000/api/users/login", {
+      return fetch("https://combattracker-api.herokuapp.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const API = {
     },
 
     getProfile: function(token){
-      return fetch("http://localhost:5000/api/users/secretProfile", {
+      return fetch("https://combattracker-api.herokuapp.com/api/users/secretProfile", {
         headers:{
           "authorization": `Bearer ${token}`
         }
