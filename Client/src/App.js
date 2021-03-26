@@ -91,7 +91,7 @@ function App() {
       <Container className="container">
         <br />
         
-        {/* <Row>
+        <Row>
         <Col md={{ span: 4, offset: 4 }}>
           <Form onSubmit={formSubmit}>
             <Form.Group controlId="formBasicEmail">
@@ -118,7 +118,7 @@ function App() {
           </Form>
           {profileState.isLoggedIn?profileState.campaigns.map(campaignObj=><p>{campaignObj.name}</p>):<h1>log in to see your campaigns</h1>}
         </Col>
-      </Row> */}
+      </Row>
 
 
         <SearchBar getQuery={(q) => setQuery(q)} />
