@@ -8,15 +8,30 @@ import SearchBar from './components/ui/SearchBar';
 import BestiaryGrid from './components/beastiary/BestiaryGrid';
 import Footer from './components/ui/Footer';
 import API from "./components/utils/API";
+import Landing from "./components/landing/Landing";
 
 
 function App() {
+  // login state
+  const [loginFormState, setloginFormState] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [profileState,setProfileState]=useState({
+    name:'',
+    email:'',
+    campaigns:[],
+    isLoggedIn:false
+  })
 
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState('')
   
+  const token = localStorage.getItem('token')
+
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(`https://combattracker-api.herokuapp.com/api/monsters`)
@@ -33,6 +48,7 @@ function App() {
       <Header />
       <div class="background">
       <Container className="container">
+        <Landing login={loginFormState} profile={profileState} />
         <br />
         <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">

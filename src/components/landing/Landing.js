@@ -4,7 +4,6 @@ import API from "../utils/API";
 
 const Landing = () => {
   // State for Login
-  // State for Login
   const [loginFormState, setloginFormState] = useState({
     email: "",
     password: "",
