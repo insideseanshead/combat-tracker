@@ -71,13 +71,14 @@ function App() {
   } 
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState('')
   
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(`https://combattracker-api.herokuapp.com/api/monsters`)
       setMonsters(res.data)
-      console.log(res)
+      setIsLoading(false)
     };
     fetchItems()
   }, [])
@@ -123,7 +124,7 @@ function App() {
 
         <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">
-          <BestiaryGrid monsters={monsters} query={query}/>
+          <BestiaryGrid isLoading={isLoading} monsters={monsters} query={query}/>
         </div>
       </Container>
       <br />

@@ -1,10 +1,10 @@
-import { Card, Accordion } from "react-bootstrap";
 import MonsterCard from "./MonsterCards";
+import Loading from '../ui/Loading'
 
 // const API = process.env.MONGO_URI
 
-const BestiaryGrid = ({ monsters, query }) => { 
-  return ( 
+const BestiaryGrid = ({ monsters, query, isLoading }) => { 
+  return ( isLoading ? (<Loading />): (
     <div className="p-3">
       {/* <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3> */}
       <section>
@@ -15,7 +15,7 @@ const BestiaryGrid = ({ monsters, query }) => {
             <MonsterCard key={monster._id} monster={monster}></MonsterCard>
           ))}
       </section>
-    </div>
+    </div>)
   );
 };
 
