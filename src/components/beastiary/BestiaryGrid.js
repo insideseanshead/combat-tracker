@@ -4,7 +4,7 @@ import MonsterCard from "./MonsterCards";
 // const API = process.env.MONGO_URI
 
 const BestiaryGrid = ({ monsters, query }) => { 
-  return (
+  return ( 
     <div className="p-3">
       {/* <h3 className="text-muted pageTitle mb-4">BEASTIARY</h3> */}
       <section>
