@@ -1,5 +1,5 @@
-// const URL_PREFIX = "http://localhost:5000"
-const URL_PREFIX = "https://combattracker-api.herokuapp.com"
+const URL_PREFIX = "http://localhost:5000"
+// const URL_PREFIX = "https://combattracker-api.herokuapp.com"
 
 const API = {
     login: function (userData) {
@@ -25,22 +25,3 @@ const API = {
   };
   
   module.exports = API;
-
-// import axios from 'axios';
-
-// export default{
-//     // GET Monsters
-//     getMonsters: function() {
-//         return axios.get(`/api/monsters`)
-//     },
-
-//     // GET Animals
-//     getAnmals: function() {
-//         return axios.get('/api/animals')
-//     },
-
-//     // GET NPCs
-//     getNpcs: function() {
-//         return axios.get('/api/npcs')
-//     }
-// }

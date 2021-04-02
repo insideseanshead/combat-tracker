@@ -22,8 +22,39 @@ function App() {
     name:'',
     email:'',
     campaigns:[],
+    token: '',
+    id: '',
     isLoggedIn:false
   })
+
+  useEffect(fetchUserData, []);
+
+  function fetchUserData() {
+    const token = localStorage.getItem('token');
+    API.getProfile(token).then((profileData)=> {
+      if (profileData) {
+        setProfileState({
+          name:profileData.name,
+          email:profileData.email,
+          campaigns:profileData.Campaigns,
+          // encounter: profileData.Encounters,
+          token: token,
+          id: profileData.id,
+          isLoggedIn: true,
+        })
+      }else{
+        localStorage.removeItem('token');
+        setProfileState({
+          name:'profileData.name',
+          email:'profileData.email',
+          campaigns:[],
+          token: 'token',
+          id: 'profileData.id',
+          isLoggedIn: false,
+        })
+      }
+    })
+  }
 
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
@@ -48,7 +79,7 @@ function App() {
       <Header />
       <div class="background">
       <Container className="container">
-        <Landing login={loginFormState} profile={profileState} />
+        <Landing  />
         <br />
         <SearchBar getQuery={(q) => setQuery(q)} />
         <div className="body-bg">
