@@ -1,6 +1,6 @@
 
 import MonsterCard from "./MonsterCards";
-import Loading from '../ui/Loading'
+import Loading from '../../components/ui/Loading'
 
 
 

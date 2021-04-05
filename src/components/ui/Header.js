@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 const Header = () => {
   return (
     <header>
-      <Navbar />
+      {/* <Navbar /> */}
       <Jumbotron className="jumbo mb-0">
         {/* <div className="header_text">
           <h1>Hello, world!</h1>

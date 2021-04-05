@@ -6,10 +6,11 @@ import Header from "./components/ui/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import SearchBar from "./components/ui/SearchBar";
-import BestiaryGrid from "./components/beastiary/BestiaryGrid";
+import BestiaryGrid from "./pages/beastiary/BestiaryGrid";
 import Footer from "./components/ui/Footer";
 import API from "./components/utils/API";
 import Landing from "./components/landing/Landing";
+import NavigationBar from "./components/ui/Navbar";
 
 function App() {
   // login state
@@ -101,6 +102,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <NavigationBar profile={profileState} />
         <Header />
         <div class="background">
           <Container className="container">
