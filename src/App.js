@@ -21,7 +21,7 @@ function App() {
   const [profileState, setProfileState] = useState({
     name: "",
     email: "",
-    // campaigns: [],
+    campaigns: [],
     token: "",
     id: "",
     isLoggedIn: false,
@@ -36,8 +36,8 @@ function App() {
         setProfileState({
           name: profileData.name,
           email: profileData.email,
-          // campaigns: profileData.Campaigns,
-          // encounters: profileData.Encounters,
+          campaigns: profileData.Campaigns,
+          encounters: profileData.Encounters,
           token: token,
           id: profileData.id,
           isLoggedIn: true,
@@ -47,7 +47,7 @@ function App() {
         setProfileState({
           name: "",
           email: "",
-          // campaigns: [],
+          campaigns: [],
           token: "",
           id: "",
           isLoggedIn: false,
@@ -88,13 +88,15 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(
-        `https://combattracker-api.herokuapp.com/api/monsters`
-      );
+        // `https://combattracker-api.herokuapp.com/api/monsters`
+        `http://localhost:5000/api/monsters`
+        );
       setMonsters(res.data);
       setIsLoading(false);
     };
     fetchItems();
   }, []);
+
 
   return (
     <div className="App">

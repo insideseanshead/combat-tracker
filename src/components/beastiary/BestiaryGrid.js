@@ -1,7 +1,9 @@
+
 import MonsterCard from "./MonsterCards";
 import Loading from '../ui/Loading'
 
-// const API = process.env.MONGO_URI
+
+
 
 const BestiaryGrid = ({ monsters, query, isLoading }) => { 
   return ( isLoading ? (<Loading />): (

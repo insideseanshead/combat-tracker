@@ -4,12 +4,12 @@ import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from "react-boots
 const NavigationBar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">Warhammer 2E Combat Tracker</Navbar.Brand>
+      <Navbar.Brand href="/">Warhammer 2E Combat Tracker</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Beastiary</Nav.Link>
-          <Nav.Link href="#link">Encounters</Nav.Link>
+          <Nav.Link href="campaigns">Campaigns</Nav.Link>
+          <Nav.Link href="beastiary">Beastiary</Nav.Link>
           {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Beastiary</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">

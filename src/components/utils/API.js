@@ -21,6 +21,12 @@ const API = {
           "authorization": `Bearer ${token}`
         }
       }).then(res=>res.json()).catch(err=>null)
+    },
+
+    getAllMonsters: function() {
+      return fetch(`${URL_PREFIX}/api/monsters`, {})
+      .then((res) => res.json())
+      .catch((err) => null);
     }
   };
   
