@@ -21,7 +21,7 @@ function App() {
   const [profileState, setProfileState] = useState({
     name: "",
     email: "",
-    campaigns: [],
+    // campaigns: [],
     token: "",
     id: "",
     isLoggedIn: false,
@@ -36,8 +36,8 @@ function App() {
         setProfileState({
           name: profileData.name,
           email: profileData.email,
-          campaigns: profileData.Campaigns,
-          // encounter: profileData.Encounters,
+          // campaigns: profileData.Campaigns,
+          // encounters: profileData.Encounters,
           token: token,
           id: profileData.id,
           isLoggedIn: true,
@@ -45,11 +45,11 @@ function App() {
       } else {
         localStorage.removeItem("token");
         setProfileState({
-          name: "profileData.name",
-          email: "profileData.email",
-          campaigns: [],
-          token: "token",
-          id: "profileData.id",
+          name: "",
+          email: "",
+          // campaigns: [],
+          token: "",
+          id: "",
           isLoggedIn: false,
         });
       }
@@ -67,7 +67,7 @@ function App() {
   const formSubmit = (event) => {
     event.preventDefault();
     API.login(loginFormState).then((newToken) => {
-      localStorage.setItem("token", newToken.token);
+      localStorage.setItem("token", newToken.token); 
       API.getProfile(newToken.token).then((profileData) => {
         setProfileState({
           name: profileData.name,
@@ -76,7 +76,6 @@ function App() {
           id: profileData.id,
           isLoggedIn: true,
         });
-        console.log(profileData);
       });
     });
   };
@@ -85,8 +84,6 @@ function App() {
   const [monsters, setMonsters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
-
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -99,32 +96,36 @@ function App() {
     fetchItems();
   }, []);
 
-  // console.log(monsters)
-
   return (
     <div className="App">
-      <Header />
-      <div class="background">
-        <Container className="container">
-          <Landing
-            profile={profileState}
-            inputChange={inputChange}
-            loginFormState={loginFormState}
-            formSubmit={formSubmit}
-          />
+      <Router>
+        <Header />
+        <div class="background">
+          <Container className="container">
+            <br />
+            <Route exact path="/">
+              <Landing
+                profile={profileState}
+                inputChange={inputChange}
+                loginFormState={loginFormState}
+                formSubmit={formSubmit}
+              />
+            </Route>
+            <Route exact path="/beastiary">
+              <SearchBar getQuery={(q) => setQuery(q)} />
+              <div className="body-bg">
+                <BestiaryGrid
+                  isLoading={isLoading}
+                  monsters={monsters}
+                  query={query}
+                />
+              </div>
+            </Route>
+          </Container>
           <br />
-          <SearchBar getQuery={(q) => setQuery(q)} />
-          <div className="body-bg">
-            <BestiaryGrid
-              isLoading={isLoading}
-              monsters={monsters}
-              query={query}
-            />
-          </div>
-        </Container>
-        <br />
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </Router>
     </div>
   );
 }

@@ -4,10 +4,10 @@ const URL_PREFIX = "http://localhost:5000"
 const API = {
     login: function (userData) {
       console.log(userData);
-      return fetch("/api/users/login", {
+      return fetch(`${URL_PREFIX}/api/users/login`, {
         method: "POST",
         headers: {
-          "Content-Type": `${URL_PREFIX}application/json`,
+          "Content-Type": `application/json`,
         },
         body:JSON.stringify(userData),
       })

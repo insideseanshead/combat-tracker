@@ -5,7 +5,7 @@ import API from "../utils/API";
 const Landing = (props) => {
   return (
     <div className="login">
-      <Row>
+      {props.profile.isLoggedIn?null:<Row>
         <Col md={{ span: 4, offset: 4 }}>
           <Form onSubmit={props.formSubmit}>
             <Form.Group controlId="formBasicEmail">
@@ -31,7 +31,7 @@ const Landing = (props) => {
             </Button>
           </Form>
         </Col>
-      </Row>
+      </Row>}
     </div>
   );
 };
