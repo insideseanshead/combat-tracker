@@ -30,6 +30,36 @@ const API = {
       .then((res) => res.json())
       .catch((err) => null);
   },
+
+  getOneCampaign: function (campaignId) {
+    return fetch(`${URL_PREFIX}/api/campaign/${campaignId}`, {})
+      .then((res) => res.json())
+      .catch((err) => null);
+  },
+
+  createCampaign: function (token, campaignData) {
+    return fetch(`${URL_PREFIX}/api/campaign`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(campaignData),
+    })
+      .then((res) => res.json())
+      .catch((err) => null);
+  },
+
+  deleteTank: function (token, campaignId) {
+    return fetch(`${URL_PREFIX}/api/campaign/${campaignId}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .catch((err) => null);
+  },
 };
 
 module.exports = API;
