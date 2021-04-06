@@ -11,6 +11,7 @@ import Footer from "./components/ui/Footer";
 import API from "./components/utils/API";
 import Landing from "./components/landing/Landing";
 import NavigationBar from "./components/ui/Navbar";
+import Campaigns from "./pages/Campaigns";
 
 function App() {
   // login state
@@ -89,8 +90,8 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(
-        `https://combattracker-api.herokuapp.com/api/monsters`
-        // `http://localhost:5000/api/monsters`
+        // `https://combattracker-api.herokuapp.com/api/monsters`
+        `http://localhost:5000/api/monsters`
         );
       setMonsters(res.data);
       setIsLoading(false);
@@ -114,6 +115,9 @@ function App() {
                 loginFormState={loginFormState}
                 formSubmit={formSubmit}
               />
+            </Route>
+            <Route exact path='/campaigns'>
+              <Campaigns />
             </Route>
             <Route exact path="/beastiary">
               <SearchBar getQuery={(q) => setQuery(q)} />
