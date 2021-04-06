@@ -109,15 +109,12 @@ function App() {
           <Container className="container">
             <br />
             <Route exact path="/">
-              <Landing
+              {profileState.isLoggedIn?<Campaigns />:<Landing
                 profile={profileState}
                 inputChange={inputChange}
                 loginFormState={loginFormState}
                 formSubmit={formSubmit}
-              />
-            </Route>
-            <Route exact path='/campaigns'>
-              <Campaigns />
+              />}
             </Route>
             <Route exact path="/beastiary">
               <SearchBar getQuery={(q) => setQuery(q)} />

@@ -110,6 +110,23 @@ td {
   width: 60px;
 }
 
+/* Campaign Style
+========================================================================= */
+.CampaignsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CampaignThumbnail {
+  font-family: 'Texturina', serif;
+  width:20vw;
+  min-height:20vh;
+  background-color: black;
+  border: 2px solid darkred;
+  margin:10px;
+  color:white;
+}
+
 /* Media Query */
 
 @media only screen and (max-width: 600px) {

@@ -8,7 +8,7 @@ const NavigationBar = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       {props.profile.isLoggedIn?<Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="campaigns">Campaigns</Nav.Link>
+          <Nav.Link href="/">Campaigns</Nav.Link>
           <Nav.Link href="beastiary">Beastiary</Nav.Link>
         </Nav>
       </Navbar.Collapse>: null}

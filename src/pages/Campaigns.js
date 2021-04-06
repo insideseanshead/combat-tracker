@@ -14,7 +14,6 @@ const Campaigns = () => {
 
   return (
     <div className="CampaignsWrapper">
-      <h1>Campaigns</h1>
       {campaigns.map((campaignObj) => (
         <CampaignThumbnails
           key={campaignObj.id}
