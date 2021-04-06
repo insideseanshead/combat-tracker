@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CampaignThumbnails from "../components/CampaignThumbnails";
+import AddCampaignForm from "../components/ui/AddCampaignForm";
 import API from "../components/utils/API";
 
 const Campaigns = () => {
@@ -13,14 +14,17 @@ const Campaigns = () => {
   }, []);
 
   return (
-    <div className="CampaignsWrapper">
-      {campaigns.map((campaignObj) => (
-        <CampaignThumbnails
-          key={campaignObj.id}
-          id={campaignObj.id}
-          name={campaignObj.name}
-        />
-      ))}
+    <div>
+      <AddCampaignForm />
+      <div className="CampaignsWrapper">
+        {campaigns.map((campaignObj) => (
+          <CampaignThumbnails
+            key={campaignObj.id}
+            id={campaignObj.id}
+            name={campaignObj.name}
+          />
+        ))}
+      </div>
     </div>
   );
 };

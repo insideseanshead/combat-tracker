@@ -2,9 +2,6 @@
 import MonsterCard from "./MonsterCards";
 import Loading from '../../components/ui/Loading'
 
-
-
-
 const BestiaryGrid = ({ monsters, query, isLoading }) => { 
   return ( isLoading ? (<Loading />): (
     <div className="p-3">
