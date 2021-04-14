@@ -109,7 +109,10 @@ function App() {
           <Container className="container">
             <br />
             <Route exact path="/">
-              {profileState.isLoggedIn?<Campaigns />:<Landing
+              {profileState.isLoggedIn?<Campaigns
+                  profile={profileState}
+                  fetchData={fetchUserData} 
+                />:<Landing
                 profile={profileState}
                 inputChange={inputChange}
                 loginFormState={loginFormState}

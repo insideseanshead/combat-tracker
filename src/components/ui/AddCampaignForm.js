@@ -5,19 +5,19 @@ const AddCampaignForm = (props) => {
   return (
     <div>
        <Form 
-    //    onSubmit={props.formSubmit}
+       onSubmit={props.formSubmit}
        >
             <Form.Group>
               <Form.Control
                 name='name'
-                // onChange={props.handleInputChange}
-                // value={props.campaignName}
+                onChange={props.handleInputChange}
+                value={props.campaignName}
               />
             </Form.Group>
             <Form.Group>
               <Form.Control
                 type="hidden"
-                // value={props.profile.id}
+                value={props.profile.id}
               />
             </Form.Group>
             <Button variant="primary" type="submit" value="add campaign">
