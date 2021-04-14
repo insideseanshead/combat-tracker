@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CampaignThumbnails from "../components/CampaignThumbnails";
 import AddCampaignForm from "../components/ui/AddCampaignForm";
 import API from "../components/utils/API";
@@ -26,12 +26,6 @@ const Campaigns = (props) => {
     })
   }
 
-  // useEffect(() => {
-  //   API.getAllCampaigns().then((campaignData) => {
-  //     setCampaigns(campaignData);
-  //   });
-  // }, []);
-
   return (
     <div>
       <AddCampaignForm
@@ -39,15 +33,15 @@ const Campaigns = (props) => {
         handleInputChange={handleInputChange}
         handleFormSubmit={handleFormSubmit}
         campaignName = {campaigns.name} />
-      {/* <div className="CampaignsWrapper">
-        {campaigns.map((campaignObj) => (
+      <div className="CampaignsWrapper">
+        {props.profile.campaigns.map((campaignObj) => (
           <CampaignThumbnails
             key={campaignObj.id}
             id={campaignObj.id}
             name={campaignObj.name}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
