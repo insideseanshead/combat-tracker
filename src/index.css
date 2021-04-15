@@ -115,6 +115,7 @@ td {
 .CampaignsWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .CampaignThumbnail {
@@ -125,6 +126,23 @@ td {
   border: 2px solid darkred;
   margin:10px;
   color:white;
+  box-shadow: 10px 10px 6px rgba(8, 8, 8, 0.534);
+}
+
+.CampaignDetail {
+  font-family: 'Texturina', serif;
+  background-image: url(https://www.rpnation.com/gallery/parchment-paper-div-test.33588/full?d=1515911638);
+  background-color: white;
+  min-height: 40vh;
+  border: 4px solid darkred;
+  box-shadow: 5px 10px 6px rgba(8, 8, 8, 0.534);
+}
+
+.CampaignDetail h1 {
+  display: block;
+  margin: 0 auto;
+  border-bottom: 2px solid darkred;
+  width: 95%;
 }
 
 /* Media Query */

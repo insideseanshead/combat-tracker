@@ -9,7 +9,7 @@ const NavigationBar = (props) => {
       {props.profile.isLoggedIn?<Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Campaigns</Nav.Link>
-          <Nav.Link href="beastiary">Beastiary</Nav.Link>
+          <Nav.Link href="/beastiary">Beastiary</Nav.Link>
         </Nav>
       </Navbar.Collapse>: null}
     </Navbar>

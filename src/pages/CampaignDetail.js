@@ -24,7 +24,7 @@ const CampaignDetail = () => {
         })
     }, []);
     return (
-        <div className='campaignDetail'>
+        <div className='CampaignDetail'>
             <h1>{campaign.name}</h1>
         </div>
     )
