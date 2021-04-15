@@ -5,7 +5,7 @@ const AddCampaignForm = (props) => {
   return (
     <div>
        <Form 
-       onSubmit={props.formSubmit}
+       onSubmit={props.handleFormSubmit}
        >
             <Form.Group>
               <Form.Control
