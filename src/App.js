@@ -83,6 +83,12 @@ function App() {
     });
   };
 
+  const deleteCampaign = (id) => {
+    API.deleteCampaign(profileState.token, id).then((data)=> {
+      fetchUserData()
+    })
+  }
+
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -113,6 +119,7 @@ function App() {
               {profileState.isLoggedIn?<Campaigns
                   profile={profileState}
                   fetchData={fetchUserData} 
+                  delCampaign={deleteCampaign}
                 />:<Landing
                 profile={profileState}
                 inputChange={inputChange}

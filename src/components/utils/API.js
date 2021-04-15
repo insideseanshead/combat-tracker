@@ -50,7 +50,7 @@ const API = {
       .catch((err) => null);
   },
 
-  deleteTank: function (token, campaignId) {
+  deleteCampaign: function (token, campaignId) {
     return fetch(`${URL_PREFIX}/api/campaign/${campaignId}`, {
       method: "DELETE",
       headers: {

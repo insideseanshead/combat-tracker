@@ -11,7 +11,7 @@ const CampaignThumbnails = (props) => {
           View
         </Button>
       </Link>{" "}
-      <Button variant="danger" size="sm" onClick={()}>
+      <Button variant="danger" size="sm" onClick={()=>props.delCampaign(props.id)}>
         Delete
       </Button>
     </div>

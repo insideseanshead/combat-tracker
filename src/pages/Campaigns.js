@@ -39,6 +39,7 @@ const Campaigns = (props) => {
             key={campaignObj.id}
             id={campaignObj.id}
             name={campaignObj.name}
+            delCampaign={props.delCampaign}
           />
         ))}
       </div>
