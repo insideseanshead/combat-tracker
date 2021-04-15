@@ -12,6 +12,7 @@ import API from "./components/utils/API";
 import Landing from "./components/landing/Landing";
 import NavigationBar from "./components/ui/Navbar";
 import Campaigns from "./pages/Campaigns";
+import CampaignDetail from "./pages/CampaignDetail";
 
 function App() {
   // login state
@@ -128,6 +129,9 @@ function App() {
                   query={query}
                 />
               </div>
+            </Route>
+            <Route path="/campaigns/:id">
+              <CampaignDetail profile={profileState} />
             </Route>
           </Container>
           <br />
