@@ -26,19 +26,19 @@ const API = {
   },
 
   getAllCampaigns: function () {
-    return fetch(`${URL_PREFIX}/api/campaign`, {})
+    return fetch(`${URL_PREFIX}/api/campaigns`, {})
       .then((res) => res.json())
       .catch((err) => null);
   },
 
   getOneCampaign: function (campaignId) {
-    return fetch(`${URL_PREFIX}/api/campaign/${campaignId}`, {})
+    return fetch(`${URL_PREFIX}/api/campaigns/${campaignId}`, {})
       .then((res) => res.json())
       .catch((err) => null);
   },
 
   createCampaign: function (token, campaignData) {
-    return fetch(`${URL_PREFIX}/api/campaign`, {
+    return fetch(`${URL_PREFIX}/api/campaigns`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const API = {
   },
 
   deleteCampaign: function (token, campaignId) {
-    return fetch(`${URL_PREFIX}/api/campaign/${campaignId}`, {
+    return fetch(`${URL_PREFIX}/api/campaigns/${campaignId}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${token}`,
