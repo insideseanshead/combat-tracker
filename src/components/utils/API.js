@@ -1,7 +1,19 @@
-// const URL_PREFIX = "http://localhost:5000";
-const URL_PREFIX = "https://combattracker-api.herokuapp.com"
+const URL_PREFIX = "http://localhost:5000";
+// const URL_PREFIX = "https://combattracker-api.herokuapp.com"
 
 const API = {
+  createProfile: function (userData) {
+    return fetch(`${URL_PREFIX}/api/users`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": `application/json`,
+      },
+      body:JSON.stringify(userData),
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err))
+  },
+
   login: function (userData) {
     console.log(userData);
     return fetch(`${URL_PREFIX}/api/users/login`, {
