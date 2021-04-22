@@ -82,7 +82,7 @@ const API = {
 
   createEncounter: function(token, encounterData) {
     return fetch(`${URL_PREFIX}/api/encounters`, {
-      method='POST',
+      method:'POST',
       headers: {
         "Content-Type": 'application/json',
         authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ const API = {
 
   deleteEncounter: function(token, encounterId) {
     return fetch(`${URL_PREFIX}/api/encounters/${encounterId}`, {
-      method='DELETE',
+      method:'DELETE',
       headers: {
         authorization: `Bearer ${token}`,
       },
