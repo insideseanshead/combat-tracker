@@ -31,7 +31,8 @@ const Landing = (props) => {
             </Button>
           </Form>
         </Col>
-      </Row>}
+      </Row>
+      }
     </div>
   );
 };

@@ -2,6 +2,7 @@ const URL_PREFIX = "http://localhost:5000";
 // const URL_PREFIX = "https://combattracker-api.herokuapp.com"
 
 const API = {
+  // Need to make a create user function on landing page.
   createProfile: function (userData) {
     return fetch(`${URL_PREFIX}/api/users`, {
       method: 'POST',
@@ -72,6 +73,36 @@ const API = {
       .then((res) => res.json())
       .catch((err) => null);
   },
+
+  getOneEncounter: function(encounterId) {
+    return fetch(`${URL_PREFIX}/api/encounters/${encounterId}`, {})
+      .then((res) => res.json())
+      .catch((err) => null)
+  },
+
+  createEncounter: function(token, encounterData) {
+    return fetch(`${URL_PREFIX}/api/encounters`, {
+      method='POST',
+      headers: {
+        "Content-Type": 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(encounterData),
+    })
+      .then((res) => res.json())
+      .catch((err)=> console.log(err))
+  },
+
+  deleteEncounter: function(token, encounterId) {
+    return fetch(`${URL_PREFIX}/api/encounters/${encounterId}`, {
+      method='DELETE',
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .catch((err) => null)
+  }
 };
 
 module.exports = API;
