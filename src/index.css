@@ -73,6 +73,12 @@ footer{
   font-size: 28px;
 }
 
+.newUserLink{
+  color: cadetblue;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
 /* Beastiary Style
 ============================================================================ */
 .card-header {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import {Link} from "react-router-dom";
 import API from "../utils/API";
 
 const Landing = (props) => {
@@ -30,6 +31,8 @@ const Landing = (props) => {
               Submit
             </Button>
           </Form>
+          <Link to='/newuser'><Button variant='warning' size='sm' className='mt-3'>Create Account</Button></Link>
+          {/* <Link to='/newuser' className='newUserLink'>Create Account</Link> */}
         </Col>
       </Row>
       }
