@@ -13,6 +13,7 @@ import Landing from "./components/landing/Landing";
 import NavigationBar from "./components/ui/Navbar";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
+import NewUser from "./pages/NewUser";
 
 function App() {
   // login state
@@ -139,6 +140,9 @@ function App() {
             </Route>
             <Route path="/campaigns/:id">
               <CampaignDetail profile={profileState} />
+            </Route>
+            <Route exact path='/newuser'>
+                <NewUser />
             </Route>
           </Container>
           <br />
