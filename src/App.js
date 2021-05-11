@@ -90,6 +90,19 @@ function App() {
     });
   };
 
+  const logout = () => {
+    console.log("fire logout");
+    localStorage.removeItem('token')
+    setProfileState({
+      name: "",
+          email: "",
+          campaigns: [],
+          token: "",
+          id: "",
+          isLoggedIn: false,
+    })
+  }
+
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -110,7 +123,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavigationBar profile={profileState} />
+        <NavigationBar profile={profileState} logout={logout} />
         <Header />
         <div class="background">
           <Container className="container">
