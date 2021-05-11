@@ -13,6 +13,7 @@ import Landing from "./components/landing/Landing";
 import NavigationBar from "./components/ui/Navbar";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
+import NewUser from "./pages/NewUser";
 
 function App() {
   // login state
@@ -70,7 +71,7 @@ function App() {
   const formSubmit = (event) => {
     event.preventDefault();
     API.login(loginFormState).then((newToken) => {
-      localStorage.setItem("token", newToken.token); 
+      localStorage.setItem("token", newToken.token);
       API.getProfile(newToken.token).then((profileData) => {
         setProfileState({
           name: profileData.name,
@@ -84,8 +85,21 @@ function App() {
   };
 
   const deleteCampaign = (id) => {
-    API.deleteCampaign(profileState.token, id).then((data)=> {
-      fetchUserData()
+    API.deleteCampaign(profileState.token, id).then((data) => {
+      fetchUserData();
+    });
+  };
+
+  const logout = () => {
+    console.log("fire logout");
+    localStorage.removeItem('token')
+    setProfileState({
+      name: "",
+          email: "",
+          campaigns: [],
+          token: "",
+          id: "",
+          isLoggedIn: false,
     })
   }
 
@@ -99,33 +113,36 @@ function App() {
       const res = await axios(
         // `https://combattracker-api.herokuapp.com/api/monsters`
         `http://localhost:5000/api/monsters`
-        );
+      );
       setMonsters(res.data);
       setIsLoading(false);
     };
     fetchItems();
   }, []);
 
-
   return (
     <div className="App">
       <Router>
-        <NavigationBar profile={profileState} />
+        <NavigationBar profile={profileState} logout={logout} />
         <Header />
         <div class="background">
           <Container className="container">
             <br />
             <Route exact path="/">
-              {profileState.isLoggedIn?<Campaigns
+              {profileState.isLoggedIn ? (
+                <Campaigns
                   profile={profileState}
-                  fetchData={fetchUserData} 
+                  fetchData={fetchUserData}
                   delCampaign={deleteCampaign}
-                />:<Landing
-                profile={profileState}
-                inputChange={inputChange}
-                loginFormState={loginFormState}
-                formSubmit={formSubmit}
-              />}
+                />
+              ) : (
+                <Landing
+                  profile={profileState}
+                  inputChange={inputChange}
+                  loginFormState={loginFormState}
+                  formSubmit={formSubmit}
+                />
+              )}
             </Route>
             <Route exact path="/beastiary">
               <SearchBar getQuery={(q) => setQuery(q)} />
@@ -139,6 +156,9 @@ function App() {
             </Route>
             <Route path="/campaigns/:id">
               <CampaignDetail profile={profileState} />
+            </Route>
+            <Route exact path="/newuser">
+              <NewUser/>
             </Route>
           </Container>
           <br />
