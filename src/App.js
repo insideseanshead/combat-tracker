@@ -71,7 +71,7 @@ function App() {
   const formSubmit = (event) => {
     event.preventDefault();
     API.login(loginFormState).then((newToken) => {
-      localStorage.setItem("token", newToken.token); 
+      localStorage.setItem("token", newToken.token);
       API.getProfile(newToken.token).then((profileData) => {
         setProfileState({
           name: profileData.name,
@@ -85,10 +85,10 @@ function App() {
   };
 
   const deleteCampaign = (id) => {
-    API.deleteCampaign(profileState.token, id).then((data)=> {
-      fetchUserData()
-    })
-  }
+    API.deleteCampaign(profileState.token, id).then((data) => {
+      fetchUserData();
+    });
+  };
 
   // State for Beastiary Cards
   const [monsters, setMonsters] = useState([]);
@@ -100,13 +100,12 @@ function App() {
       const res = await axios(
         // `https://combattracker-api.herokuapp.com/api/monsters`
         `http://localhost:5000/api/monsters`
-        );
+      );
       setMonsters(res.data);
       setIsLoading(false);
     };
     fetchItems();
   }, []);
-
 
   return (
     <div className="App">
@@ -117,16 +116,20 @@ function App() {
           <Container className="container">
             <br />
             <Route exact path="/">
-              {profileState.isLoggedIn?<Campaigns
+              {profileState.isLoggedIn ? (
+                <Campaigns
                   profile={profileState}
-                  fetchData={fetchUserData} 
+                  fetchData={fetchUserData}
                   delCampaign={deleteCampaign}
-                />:<Landing
-                profile={profileState}
-                inputChange={inputChange}
-                loginFormState={loginFormState}
-                formSubmit={formSubmit}
-              />}
+                />
+              ) : (
+                <Landing
+                  profile={profileState}
+                  inputChange={inputChange}
+                  loginFormState={loginFormState}
+                  formSubmit={formSubmit}
+                />
+              )}
             </Route>
             <Route exact path="/beastiary">
               <SearchBar getQuery={(q) => setQuery(q)} />
@@ -141,8 +144,8 @@ function App() {
             <Route path="/campaigns/:id">
               <CampaignDetail profile={profileState} />
             </Route>
-            <Route exact path='/newuser'>
-                <NewUser />
+            <Route exact path="/newuser">
+              <NewUser/>
             </Route>
           </Container>
           <br />
