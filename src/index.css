@@ -145,6 +145,24 @@ td {
   width: 95%;
 }
 
+/* Encounter Page
+======================================================================= */
+.NewEncounterHead {
+  background-color: black;
+}
+
+.EncounterCreator {
+  height: 85vh;
+}
+
+.EncounterMonsterList {
+  background-color: white;
+}
+
+.SelectedMonsters {
+  background-color: darkslategray
+}
+
 /* Media Query */
 
 @media only screen and (max-width: 600px) {
