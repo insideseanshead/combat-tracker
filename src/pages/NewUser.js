@@ -29,6 +29,7 @@ const NewUser = (props) => {
         email: "",
         password: "",
       });
+      window.location.href='/'
     });
   };
 

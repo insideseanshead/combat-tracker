@@ -111,8 +111,8 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(
-        // `https://combattracker-api.herokuapp.com/api/monsters`
-        `http://localhost:5000/api/monsters`
+        `https://combattracker-api.herokuapp.com/api/monsters`
+        // `http://localhost:5000/api/monsters`
       );
       setMonsters(res.data);
       setIsLoading(false);
