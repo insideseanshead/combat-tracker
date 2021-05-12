@@ -14,6 +14,7 @@ import NavigationBar from "./components/ui/Navbar";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
 import NewUser from "./pages/NewUser";
+import NewEncounter from "./pages/NewEncounter"
 
 function App() {
   // login state
@@ -111,8 +112,8 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const res = await axios(
-        `https://combattracker-api.herokuapp.com/api/monsters`
-        // `http://localhost:5000/api/monsters`
+        // `https://combattracker-api.herokuapp.com/api/monsters`
+        `http://localhost:5000/api/monsters`
       );
       setMonsters(res.data);
       setIsLoading(false);
@@ -159,6 +160,9 @@ function App() {
             </Route>
             <Route exact path="/newuser">
               <NewUser/>
+            </Route>
+            <Route exact path="/newencounter">
+                <NewEncounter/>
             </Route>
           </Container>
           <br />

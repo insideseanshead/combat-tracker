@@ -1,5 +1,5 @@
-// const URL_PREFIX = "http://localhost:5000";
-const URL_PREFIX = "https://combattracker-api.herokuapp.com"
+const URL_PREFIX = "http://localhost:5000";
+// const URL_PREFIX = "https://combattracker-api.herokuapp.com"
 
 const API = {
   // Need to make a create user function on landing page.
