@@ -1,9 +1,10 @@
 import React from 'react'
 
-const CharacterCard = () => {
+const CharacterCard = (props) => {
     return (
         <div>
-            <table>
+            <h3>{props.name}</h3>
+            {/* <table>
                     <thead>
                       <tr>
                         <th>WS</th>
@@ -55,7 +56,7 @@ const CharacterCard = () => {
                         <td>{monster.fatePoints}</td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table> */}
         </div>
     )
 }

@@ -82,7 +82,7 @@ const API = {
 
   createCharacter: function (token, characterData) {
     return fetch(`${URL_PREFIX}/api/characters`, {
-      method: 'POST',
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
@@ -90,7 +90,7 @@ const API = {
       body: JSON.stringify(characterData),
     })
       .then((res) => res.json())
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
   },
 
   deleteCharacter: function(token,characterId) {
