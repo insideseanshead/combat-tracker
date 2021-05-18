@@ -74,6 +74,36 @@ const API = {
       .catch((err) => null);
   },
 
+  getOneCharacter: function(characterId) {
+    return fetch(`${URL_PREFIX}/api/characters/${characterId}`, {})
+      .then((res) => res.json())
+      .catch((err) => null);
+  },
+
+  createCharacter: function (token, characterData) {
+    return fetch(`${URL_PREFIX}/api/characters`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(characterData),
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err))
+  },
+
+  deleteCharacter: function(token,characterId) {
+    return fetch(`${URL_PREFIX}/api/characters/${characterId}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res)=>res.json())
+      .catch((err)=>null);
+  },
+
   getOneEncounter: function(encounterId) {
     return fetch(`${URL_PREFIX}/api/encounters/${encounterId}`, {})
       .then((res) => res.json())

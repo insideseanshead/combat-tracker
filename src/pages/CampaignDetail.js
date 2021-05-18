@@ -15,22 +15,22 @@ const CampaignDetail = () => {
   const [characterFormState, setCharacterFormState] = useState({
     name: "",
     player: "",
-    weaponSkill: '',
-    ballisticSkill: '',
-    strength: '',
-    toughness: '',
-    agility: '',
-    intellegence: '',
-    willpower: '',
-    fellowship: '',
-    attacks: '',
-    wounds: '',
-    strengthBonus: '',
-    toughnessBonus: '',
-    movement: '',
-    magic: '',
-    insanityPoints: '',
-    fatePoints: '',
+    weaponSkill: "",
+    ballisticSkill: "",
+    strength: "",
+    toughness: "",
+    agility: "",
+    intellegence: "",
+    willpower: "",
+    fellowship: "",
+    attacks: "",
+    wounds: "",
+    strengthBonus: "",
+    toughnessBonus: "",
+    movement: "",
+    magic: "",
+    insanityPoints: "",
+    fatePoints: "",
   });
 
   //TODO: set cncounter form state
@@ -49,11 +49,11 @@ const CampaignDetail = () => {
   }, []);
 
   const handleCharacterInputChange = (event) => {
-      const {name,value} = event.target;
-      setCharacterFormState({
-          ...characterFormState,
-          [name]:value
-      })
+    const { name, value } = event.target;
+    setCharacterFormState({
+      ...characterFormState,
+      [name]: value,
+    });
   };
 
   const handleCharacterFormSubmit = (e) => {};
