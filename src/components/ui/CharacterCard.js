@@ -4,7 +4,7 @@ const CharacterCard = (props) => {
     return (
         <div>
             <h3>{props.name}</h3>
-            {/* <table>
+            <table>
                     <thead>
                       <tr>
                         <th>WS</th>
@@ -19,14 +19,14 @@ const CharacterCard = (props) => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{monster.weaponSkill}%</td>
-                        <td>{monster.balisticSkill}%</td>
-                        <td>{monster.strength}%</td>
-                        <td>{monster.toughness}%</td>
-                        <td>{monster.agility}%</td>
-                        <td>{monster.intelligence}%</td>
-                        <td>{monster.willPower}%</td>
-                        <td>{monster.fellowship}%</td>
+                        <td>{props.weaponSkill}%</td>
+                        <td>{props.balisticSkill}%</td>
+                        <td>{props.strength}%</td>
+                        <td>{props.toughness}%</td>
+                        <td>{props.agility}%</td>
+                        <td>{props.intelligence}%</td>
+                        <td>{props.willPower}%</td>
+                        <td>{props.fellowship}%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -46,17 +46,17 @@ const CharacterCard = (props) => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{monster.actions}</td>
-                        <td>{monster.wounds}</td>
-                        <td>{monster.strengthBonus}</td>
-                        <td>{monster.toughnessBonus}</td>
-                        <td>{monster.movement}</td>
-                        <td>{monster.magic}</td>
-                        <td>{monster.insanityPoints}</td>
-                        <td>{monster.fatePoints}</td>
+                        <td>{props.actions}</td>
+                        <td>{props.wounds}</td>
+                        <td>{props.strengthBonus}</td>
+                        <td>{props.toughnessBonus}</td>
+                        <td>{props.movement}</td>
+                        <td>{props.magic}</td>
+                        <td>{props.insanityPoints}</td>
+                        <td>{props.fatePoints}</td>
                       </tr>
                     </tbody>
-                  </table> */}
+                  </table>
         </div>
     )
 }

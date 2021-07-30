@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AddCharacterForm from "../components/ui/AddCharacterForm";
 import AddEncounterForm from "../components/ui/AddEncounterForm";
-import CharacterCard from '../components/ui/CharacterCard'
+import CharacterCard from "../components/ui/CharacterCard";
 import API from "../components/utils/API";
 
 const CampaignDetail = (props) => {
@@ -92,20 +92,22 @@ const CampaignDetail = (props) => {
         magic: "",
         insanityPoints: "",
         fatePoints: "",
-      })
+      });
     });
   };
 
   return (
     <div className="CampaignDetail">
       <h1>{campaign.name}</h1>
-      <AddCharacterForm
+      {/* <AddCharacterForm
         handleCharacterInputChange={handleCharacterInputChange}
         handleCharacterFormSubmit={handleCharacterFormSubmit}
         characterFormState={characterFormState}
-      />
+      /> */}
       {/* <AddEncounterForm /> */}
-      {/* {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} />)} */}
+      <div className="CharacterDetail">
+        {/* {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} ></CharacterCard>)} */}
+      </div>
     </div>
   );
 };
