@@ -30,6 +30,7 @@ const CampaignDetail = (props) => {
     magic: "",
     insanityPoints: "",
     fatePoints: "",
+    userId: props.profile.id
   });
 
   //TODO: set cncounter form state

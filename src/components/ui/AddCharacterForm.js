@@ -164,6 +164,15 @@ const AddCharacterForm = (props) => {
                 placeholder="IP"
               />
             </Col>
+            {/* <Col>
+              <Form.Control
+                onChange={props.handleCharacterInputChange}
+                value={props.characterFormState.insanityPoints}
+                type="number"
+                name="insanityPoints"
+                placeholder="IP"
+              />
+            </Col> */}
             <Col>
               <Form.Control
                 onChange={props.handleCharacterInputChange}
