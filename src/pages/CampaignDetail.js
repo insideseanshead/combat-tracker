@@ -42,7 +42,7 @@ const CampaignDetail = (props) => {
         setCampaign({
           name: campaignData.name,
           character: campaignData.Characters,
-          userId: campaignData.userId,
+          userId: campaignData.UserId,
         });
       }
     });
@@ -67,7 +67,7 @@ const CampaignDetail = (props) => {
           setCampaign({
             name: campaignData.name,
             character: campaignData.Characters,
-            userId: campaignData.userId,
+            userId: campaignData.UserId,
           });
         }
       });
@@ -97,13 +97,13 @@ const CampaignDetail = (props) => {
   return (
     <div className="CampaignDetail">
       <h1>{campaign.name}</h1>
-      {/* <AddCharacterForm
+      <AddCharacterForm
         handleCharacterInputChange={handleCharacterInputChange}
         handleCharacterFormSubmit={handleCharacterFormSubmit}
         characterFormState={characterFormState}
-      /> */}
+      />
       <div className="CharacterDetail">
-        {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} ></CharacterCard>)}
+        {/* {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} ></CharacterCard>)} */}
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ function App() {
           email: profileData.email,
           campaigns: profileData.Campaigns,
           encounters: profileData.Encounters,
-          characters: profileData.Characters,
+          character: profileData.Characters,
           token: token,
           id: profileData.id,
           isLoggedIn: true,
@@ -59,8 +59,10 @@ function App() {
           isLoggedIn: false,
         });
       }
+      console.log(profileData)
     });
   }
+
 
   const inputChange = (event) => {
     const { name, value } = event.target;
