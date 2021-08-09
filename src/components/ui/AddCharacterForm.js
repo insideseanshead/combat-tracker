@@ -84,9 +84,9 @@ const AddCharacterForm = (props) => {
             <Col>
               <Form.Control
                 onChange={props.handleCharacterInputChange}
-                value={props.characterFormState.willpower}
+                value={props.characterFormState.willPower}
                 type="number"
-                name="willpower"
+                name="willPower"
                 placeholder="WP"
               />
             </Col>
