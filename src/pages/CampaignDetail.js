@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AddCharacterForm from "../components/ui/AddCharacterForm";
-import AddEncounterForm from "../components/ui/AddEncounterForm";
 import CharacterCard from "../components/ui/CharacterCard";
 import API from "../components/utils/API";
 
@@ -9,7 +8,6 @@ const CampaignDetail = (props) => {
   const [campaign, setCampaign] = useState({
     name: "",
     userId: "",
-    encounter: [],
     character: [],
   });
 
@@ -104,9 +102,8 @@ const CampaignDetail = (props) => {
         handleCharacterFormSubmit={handleCharacterFormSubmit}
         characterFormState={characterFormState}
       /> */}
-      {/* <AddEncounterForm /> */}
       <div className="CharacterDetail">
-        {/* {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} ></CharacterCard>)} */}
+        {campaign.character.map((characterObj) =><CharacterCard name={characterObj.name} ></CharacterCard>)}
       </div>
     </div>
   );

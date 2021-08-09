@@ -2,9 +2,9 @@ import React from 'react'
 
 const CharacterCard = (props) => {
     return (
-        <div>
+        <div class='characterCard'>
             <h3>{props.name}</h3>
-            <table>
+            {/* <table>
                     <thead>
                       <tr>
                         <th>WS</th>
@@ -56,7 +56,7 @@ const CharacterCard = (props) => {
                         <td>{props.fatePoints}</td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table> */}
         </div>
     )
 }

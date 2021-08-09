@@ -74,6 +74,7 @@ const API = {
       .catch((err) => null);
   },
 
+  // GET one Character
   getOneCharacter: function(characterId) {
     return fetch(`${URL_PREFIX}/api/characters/${characterId}`, {})
       .then((res) => res.json())
