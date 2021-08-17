@@ -75,14 +75,14 @@ const API = {
   },
 
   // GET one Character
-  getOneCharacter: function(characterId) {
-    return fetch(`${URL_PREFIX}/api/characters/${characterId}`, {})
+  getOneCharacter: function (characterId) {
+    return fetch(`${URL_PREFIX}/api/character/${characterId}`, {})
       .then((res) => res.json())
       .catch((err) => null);
   },
 
   createCharacter: function (token, characterData) {
-    return fetch(`${URL_PREFIX}/api/characters`, {
+    return fetch(`${URL_PREFIX}/api/character`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,7 +95,7 @@ const API = {
   },
 
   deleteCharacter: function(token,characterId) {
-    return fetch(`${URL_PREFIX}/api/characters/${characterId}`, {
+    return fetch(`${URL_PREFIX}/api/character/${characterId}`, {
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${token}`,
