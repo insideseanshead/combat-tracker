@@ -75,36 +75,35 @@ const API = {
   },
 
   // GET one Character
-  getOneCharacter: function (characterId) {
+  getOneCharacter: function(characterId) {
     return fetch(`${URL_PREFIX}/api/character/${characterId}`, {})
       .then((res) => res.json())
-      .catch((err) => null);
+      .catch((err) => null)
   },
 
-  createCharacter: function (token, characterData) {
+  createCharacter: function(token, characterData) {
     return fetch(`${URL_PREFIX}/api/character`, {
-      method: "POST",
+      method:'POST',
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": 'application/json',
         authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(characterData),
     })
       .then((res) => res.json())
-      .catch((err) => console.log(err));
+      .catch((err)=> console.log(err))
   },
 
-  deleteCharacter: function(token,characterId) {
+  deleteCharacter: function(token, characterId) {
     return fetch(`${URL_PREFIX}/api/character/${characterId}`, {
-      method: 'DELETE',
+      method:'DELETE',
       headers: {
         authorization: `Bearer ${token}`,
       },
     })
-      .then((res)=>res.json())
-      .catch((err)=>null);
+      .then((res) => res.json())
+      .catch((err) => null)
   },
-
   getOneEncounter: function(encounterId) {
     return fetch(`${URL_PREFIX}/api/encounters/${encounterId}`, {})
       .then((res) => res.json())

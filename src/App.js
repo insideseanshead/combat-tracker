@@ -43,7 +43,7 @@ function App() {
           email: profileData.email,
           campaigns: profileData.Campaigns,
           character: profileData.Characters,
-          // encounters: profileData.Encounters,
+          encounters: profileData.Encounters,
           token: token,
           id: profileData.id,
           isLoggedIn: true,

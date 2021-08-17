@@ -9,6 +9,7 @@ const CampaignDetail = (props) => {
     name: "",
     userId: "",
     character: [],
+    encounters:[]
   });
 
   const [characterFormState, setCharacterFormState] = useState({
@@ -43,6 +44,7 @@ const CampaignDetail = (props) => {
         setCampaign({
           name: campaignData.name,
           character: campaignData.Characters,
+          encounter: campaignData.encounters,
           userId: campaignData.UserId,
         });
       }
